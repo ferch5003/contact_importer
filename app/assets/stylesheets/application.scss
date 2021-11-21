@@ -15,8 +15,10 @@
 @import 'font-awesome';
 
 // Graphical variables
-@import 'config/fonts';
 @import 'config/bootstrap_variables';
+@import 'config/fonts';
+// Utilities
+@import 'config/utilities';
 
 // Components
 @import 'components/buttons';
@@ -24,5 +26,7 @@
 // External libraries
 @import 'bootstrap/scss/bootstrap';
 
-// Utilities
-@import 'config/utilities';
+
+// Controllers Views CSS
+@import 'pages';
+
