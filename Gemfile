@@ -26,6 +26,9 @@ gem 'jbuilder', '~> 2.7'
 # Library for bulk inserting data using ActiveRecord
 gem 'activerecord-import'
 
+# Add simple validations to Active Storage
+gem 'active_storage_validations'
+
 gem 'after_commit_everywhere', '~> 1.0'
 
 # Adding finite state machines to Ruby classes
@@ -36,6 +39,9 @@ gem 'aws-sdk-s3', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+# Verifies that the credit card number provided is well-formed.
+gem 'credit_card_validations'
 
 # Authentication for Rails
 gem 'devise'

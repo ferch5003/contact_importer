@@ -41,6 +41,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_storage_validations (0.9.5)
+      rails (>= 5.2.0)
     activejob (6.1.4.1)
       activesupport (= 6.1.4.1)
       globalid (>= 0.3.6)
@@ -112,6 +114,9 @@ GEM
     concurrent-ruby (1.1.9)
     connection_pool (2.2.5)
     crass (1.0.6)
+    credit_card_validations (4.1.0)
+      activemodel (>= 3, <= 6.2)
+      activesupport (>= 3, <= 6.2)
     database_cleaner-active_record (2.0.1)
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
@@ -313,6 +318,7 @@ PLATFORMS
 
 DEPENDENCIES
   aasm
+  active_storage_validations
   activerecord-import
   after_commit_everywhere (~> 1.0)
   aws-sdk-s3
@@ -321,6 +327,7 @@ DEPENDENCIES
   bullet
   byebug
   capybara (>= 3.26)
+  credit_card_validations
   database_cleaner-active_record
   devise
   dotenv-rails
