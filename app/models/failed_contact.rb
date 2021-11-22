@@ -4,7 +4,7 @@ class FailedContact < ApplicationRecord
   belongs_to :user
   belongs_to :contact_file
 
-  validates :errors, presence: true
+  validates :error_messages, presence: true
 
   before_save :save_credit_card
 end
