@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :contact_file do
-    status { "MyString" }
-    user { nil }
+    association :user
+    status { :on_hold }
   end
 end
