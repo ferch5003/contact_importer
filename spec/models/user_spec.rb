@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'relationships' do
+    it { should have_many(:contacts) }
+    it { should have_many(:contact_files) }
+    it { should have_many(:failed_contacts) }
   end
 
   describe 'validations' do

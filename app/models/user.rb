@@ -8,5 +8,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   gravtastic
 
+  has_many :contacts
+  has_many :contact_files
+  has_many :failed_contacts
+
   validates :email, uniqueness: { case_sensitive: false }
 end
