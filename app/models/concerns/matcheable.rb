@@ -12,9 +12,9 @@ module Matcheable
   private
 
   def iso_8601_valid_format
-    DATE_VALID_FORMATS.any? { |format| DateParser.valid_format?(date: date_of_birth, format: format) }
-  rescue StandardError => e
-    puts "[Matcheable - Error: #{e}]"
+    valid = DATE_VALID_FORMATS.any? { |format| DateParser.valid_format?(date: date_of_birth, format: format) }
+    raise 'Invalid Format' unless valid
+  rescue StandardError
     message = 'Invalid format, please check the ISO 8601 to verify if your format is any of %Y%m%d or %F'
     errors.add(:date_of_birth, message)
   end
