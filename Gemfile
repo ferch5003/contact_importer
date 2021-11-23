@@ -73,6 +73,8 @@ gem 'sidekiq'
 gem 'smarter_csv'
 
 group :development, :test do
+  # Add a comment summarizing the current schema
+  gem 'annotate'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Increase your application's performance by reducing the number of queries it makes (N + 1 problem)

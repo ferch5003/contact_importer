@@ -1,3 +1,34 @@
+# == Schema Information
+#
+# Table name: contacts
+#
+#  id               :bigint           not null, primary key
+#  address          :string
+#  card_last_digits :string
+#  credit_card      :string
+#  date_of_birth    :date
+#  deleted_at       :datetime
+#  email            :string
+#  franchise        :string
+#  name             :string
+#  telephone        :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  contact_file_id  :bigint           not null
+#  user_id          :bigint           not null
+#
+# Indexes
+#
+#  index_contacts_on_contact_file_id    (contact_file_id)
+#  index_contacts_on_deleted_at         (deleted_at)
+#  index_contacts_on_email_and_user_id  (email,user_id) UNIQUE
+#  index_contacts_on_user_id            (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (contact_file_id => contact_files.id)
+#  fk_rails_...  (user_id => users.id)
+#
 require 'credit_card_validations/string'
 
 FactoryBot.define do
