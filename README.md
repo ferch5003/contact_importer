@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is App has the goal to import your contacts in order to have the management of them.
 
-Things you may want to cover:
+You can import them through CSV files, and this contact may have the following attributes:
 
-* Ruby version
+- Name
+- Email
+- Telephone
+- Address
+- Date of Birth
+- Credit Card
+- Franchise
 
-* System dependencies
+To run the project first copy the .envars file in the roor of the project and call it .env, then write the credentials in this file. Then run this steps:
 
-* Configuration
+1. sudo service redis-server start (In Linux, You have to have Redis installed for this step)
+2. bundle
+3. rails db:create db:migrate
+4. (optional) rails db:setup
+5. foreman start -f Procfile.dev
 
-* Database creation
+Both in development and in production sidekiq and AWS S3 are used.
 
-* Database initialization
+Link to the application server
+[Contact Management App](https://c-importer-app.herokuapp.com/)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Link to the schema if you need to test contacts:
+[Schema](https://www.mockaroo.com/0b47ac00/)

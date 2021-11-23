@@ -1,0 +1,22 @@
+<div class="table-responsive rounded shadow-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr clasS="table-primary">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Telephone</th>
+        <th>Address</th>
+        <th>Date of Birth</th>
+        <th>Credit Card</th>
+        <th>Franchise</th>
+        <th>Created At</th>
+        <th>Errors</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% failed_contacts.each do |failed_contact| %>
+        <%= render 'failed_contact_row', failed_contact: failed_contact %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

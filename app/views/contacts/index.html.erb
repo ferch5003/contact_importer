@@ -1,0 +1,7 @@
+<div class="d-grid gap-4">
+  <h1>Contacts</h1>
+  <%= render 'contacts_table', contacts: @contacts %>
+  <div class="ms-auto">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+</div>

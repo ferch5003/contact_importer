@@ -1,0 +1,18 @@
+<div class="d-grid gap-4">
+  <h1>Contact Files</h1>
+  <%= form_for @contact_file do |form| %>
+    <div class="mb-3">
+      <h3>Upload new file</h3>
+    </div>
+    <div class='mb-3' >
+      <%= form.file_field :file, class: 'form-control', accept: 'text/csv' %>
+    </div>
+    <div class='mb-3' >
+      <%= form.submit 'Upload', class: 'btn btn-primary float-end' %>
+    </div>
+  <% end %>
+  <%= render 'contact_files_table', contact_files: @contact_files %>
+  <div class="ms-auto">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+</div>

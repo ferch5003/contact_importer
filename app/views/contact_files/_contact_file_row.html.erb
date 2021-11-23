@@ -1,0 +1,10 @@
+<tr>
+  <td><%= contact_file.file.filename %></td>
+  <td><%= contact_file.created_at %></td>
+  <td>
+    <span class="badge rounded-pill <%= badge_status_color(status: contact_file.status) %>">
+      <%= contact_file.status.humanize %>
+    </span>
+  </td>
+  <td><%= link_to 'Download', contact_file.file.url %></td>
+</tr>

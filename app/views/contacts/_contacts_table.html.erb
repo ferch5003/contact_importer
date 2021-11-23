@@ -1,0 +1,21 @@
+<div class="table-responsive rounded shadow-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr clasS="table-primary">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Telephone</th>
+        <th>Address</th>
+        <th>Date of Birth</th>
+        <th>Credit Card</th>
+        <th>Franchise</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% contacts.each do |contact| %>
+        <%= render 'contact_row', contact: contact %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

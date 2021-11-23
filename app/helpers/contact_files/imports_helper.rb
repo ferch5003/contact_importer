@@ -1,0 +1,2 @@
+module ContactFiles::ImportsHelper
+end
