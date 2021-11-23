@@ -1,0 +1,17 @@
+<div class="table-responsive rounded shadow-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr clasS="table-primary">
+        <th>Filename</th>
+        <th>Created At</th>
+        <th>Status</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% contact_files.each do |contact_file| %>
+        <%= render 'contact_file_row', contact_file: contact_file %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
