@@ -1,7 +1,7 @@
 module ContactFilesHelper
   STATUS_COLORS = {
     'on_hold' => 'bg-primary',
-    'processing' => 'bg-info text-dark',
+    'processing' => 'bg-info',
     'failed' => 'bg-danger',
     'finished' => 'bg-success'
   }.freeze

@@ -8,11 +8,11 @@ class ContactFilesController < ApplicationController
 
   def create
     if params[:contact_file].present?
-      result = ContactFiles::Create.call(file: contact_file_params[:file], user_id: current_user.id)
-      if result.success?
-        redirect_to contact_files_path, notice: 'File uploaded successfully!'
+      response = ContactFiles::Create.call(file: contact_file_params[:file], user_id: current_user.id)
+      if response.success?
+        redirect_to new_contact_file_import_path(response.result), notice: 'File uploaded successfully!'
       else
-        redirect_to contact_files_path, alert: result.title
+        redirect_to contact_files_path, alert: response.title
       end
     else
       redirect_to contact_files_path, alert: 'Missing file, please try again'

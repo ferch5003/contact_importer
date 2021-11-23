@@ -36,6 +36,15 @@ class Contact < ApplicationRecord
   belongs_to :user
   belongs_to :contact_file
 
+  class << self
+    def bulk_proccess(contacts)
+      contacts.each do |contact|
+        contact.run_callbacks(:save) { false }
+      end
+      import contacts, recursive: true, validate: false, timestamps: true
+    end
+  end
+
   validates :name, presence: true, format: { with: NAME_REGEX }
   validates :email, presence: true, format: { with: EMAIL_REGEX }
   validates :telephone, presence: true, format: { with: PHONE_REGEX }

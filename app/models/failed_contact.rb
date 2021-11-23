@@ -35,6 +35,15 @@ class FailedContact < ApplicationRecord
   belongs_to :user
   belongs_to :contact_file
 
+  class << self
+    def bulk_proccess(contacts)
+      contacts.each do |contact|
+        contact.run_callbacks(:save) { false }
+      end
+      import contacts, recursive: true, validate: false, timestamps: true
+    end
+  end
+
   validates :error_messages, presence: true
 
   before_save :save_credit_card
