@@ -2,7 +2,7 @@ class CreateContacts < ActiveRecord::Migration[6.1]
   def change
     create_table :contacts do |t|
       t.string :name
-      t.string :date_of_birth
+      t.date :date_of_birth
       t.string :telephone
       t.string :address
       t.string :credit_card

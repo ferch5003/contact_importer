@@ -8,11 +8,11 @@ FactoryBot.define do
     association :contact_file
     sequence(:id) { |n| }
     name { Faker::Name.name }
-    date_of_birth { Faker::Date.between(from: '1940-01-01', to: '2000-12-31') }
+    date_of_birth { '1990-10-10' }
     telephone do
       country = Faker::Number.decimal_part(digits: 2)
       number = Faker::Number.number(digits: 10)
-      "#{+country}#{number}"
+      "(+#{country})#{number}"
     end
     address { Faker::Address.full_address }
     credit_card { card_number }
