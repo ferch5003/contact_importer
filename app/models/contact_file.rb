@@ -45,5 +45,5 @@ class ContactFile < ApplicationRecord
   has_one_attached :file
   has_many :contacts
 
-  validates :file, attached: true, content_type: ['text/csv']
+  validates :file, attached: true, content_type: ['application/vnd.ms-excel', 'text/csv']
 end

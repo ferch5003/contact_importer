@@ -28,7 +28,7 @@ RSpec.describe ContactFile, type: :model do
 
   describe 'validations' do
     it { should validate_attached_of(:file) }
-    it { should validate_content_type_of(:file).allowing('text/csv') }
+    it { should validate_content_type_of(:file).allowing('application/vnd.ms-excel', 'text/csv') }
   end
 
   describe 'scopes' do
