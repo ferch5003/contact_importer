@@ -6,6 +6,9 @@
     <div class="collapse navbar-collapse" id="nave-menu">
       <%= link_to 'Contact Management App', root_path, class: 'navbar-brand' %>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to 'Contacts', contacts_path, class: 'nav-link' %>
+        </li>
       </ul>
       <div class="d-flex">
         <% if user_signed_in? %>
