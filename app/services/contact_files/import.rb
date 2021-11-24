@@ -4,14 +4,14 @@ module ContactFiles
       @current_user = User.find(user_id)
       @contact_file = ContactFile.find(contact_file_id)
       @filename = filename
-      @headers = headers
+      @headers = parse_headers(headers)
     end
 
     def call
       return Response.failure(title: "The file doesn't exist, please try again") unless File.file?(@filename)
 
       options = {
-        header_transformations: [key_mapping: @headers.invert]
+        key_mapping: @headers
       }
       contacts = SmarterCSV.process(@filename, options)
 
@@ -23,6 +23,14 @@ module ContactFiles
     end
 
     private
+
+    def parse_headers(headers)
+      # First symbolize keys
+      headers = headers.symbolize_keys
+
+      # Then invert keys/values in order to key_mapping with SmarterCSV
+      headers.invert.deep_transform_keys { |key| key.parameterize.underscore.to_sym }
+    end
 
     def generated_contacts(contacts)
       ActiveRecord::Base.transaction do
