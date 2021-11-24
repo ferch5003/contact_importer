@@ -8,7 +8,7 @@ class ImportContactsCsvJob < ApplicationJob
 
     contact_file.proccess!
 
-    Tempfile.create('a') do |tmp_csv|
+    Tempfile.create(contact_file.file.filename.to_s) do |tmp_csv|
       tmp_csv.write(contact_file.file.download)
       tmp_csv.rewind
 

@@ -1,6 +1,6 @@
 require 'credit_card_validations/string'
 
-after :users, :contact_files, :contact do
+after :users, :contact_files, :contacts do
   puts 'Seeding FailedContacts...'
 
   10.times do |i|
