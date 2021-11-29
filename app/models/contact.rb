@@ -46,7 +46,8 @@ class Contact < ApplicationRecord
   end
 
   validates :name, presence: true, format: { with: NAME_REGEX }
-  validates :email, presence: true, format: { with: EMAIL_REGEX }
+  validates :email, presence: true, format: { with: EMAIL_REGEX },
+                    uniqueness: { scope: :user_id, message: 'Repeated record for this user' }
   validates :telephone, presence: true, format: { with: PHONE_REGEX }
   validates :address, presence: true
   validates :credit_card, presence: true, credit_card_number: true

@@ -5,7 +5,7 @@ module Matcheable
 
   EMAIL_REGEX = URI::MailTo::EMAIL_REGEXP
   NAME_REGEX = /\A[^-]+\z/
-  PHONE_REGEX = /\A\(\+\d{2}\)(\s?\d{3}){2}(\s?\d{2}){3}\z|\A\(\+\d{2}\)(\s?\d{3})(-?\d{3})(-?\d{2}){2}\z/
+  PHONE_REGEX = /\A\(\+\d{2}\)(\s?\d{3}){2}(\s?\d{2}){2}\z|\A\(\+\d{2}\)(\s?\d{3})(-?\d{3})(-?\d{2}){2}\z/
 
   DATE_VALID_FORMATS = %w[%F %Y%m%d].freeze
 
